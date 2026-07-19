@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Your Ebook Is Ready</title>
+  <style>
+    :root{--bg:#030712;--blue:#1688ff;--light:#58bcff;--white:#fff;--text:#eef4ff;--muted:#aab7cb;--border:rgba(88,188,255,.25)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{min-height:100vh;padding:20px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top,rgba(22,136,255,.2),transparent 35%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+    .card{width:100%;max-width:760px;padding:50px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(145deg,#0d2146,#06101f);box-shadow:0 30px 80px rgba(0,0,0,.45);text-align:center}
+    .icon{width:90px;height:90px;margin:0 auto 25px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--light));color:var(--white);font-size:46px;font-weight:bold}
+    h1{margin-bottom:16px;color:var(--white);font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.1}
+    p{margin-bottom:16px;color:var(--muted);font-size:1.02rem;line-height:1.7}
+    .download-status{margin:26px 0;padding:20px;border-left:4px solid var(--blue);border-radius:10px;background:rgba(15,35,69,.9);text-align:left}
+    .download-status strong{color:var(--white)}
+    .download-button{display:inline-flex;align-items:center;justify-content:center;min-height:58px;margin-top:12px;padding:16px 30px;border-radius:13px;background:linear-gradient(135deg,var(--blue),#096bcf);box-shadow:0 14px 35px rgba(22,136,255,.3);color:var(--white);font-size:.92rem;font-weight:900;text-decoration:none;transition:.25s ease}
+    .download-button:hover{transform:translateY(-2px)}
+    .small-text{margin-top:18px;color:#8090a8;font-size:.8rem}
+    .footer{margin-top:34px;color:#7e8ca3;font-size:.82rem}
+    @media(max-width:650px){.card{padding:36px 22px}.download-status{text-align:center}.download-button{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="icon" aria-hidden="true">✓</div>
+    <h1>Thank You!</h1>
+    <p>Your request was successful.</p>
+    <p>Your free ebook download should start automatically in a few seconds.</p>
+
+    <div class="download-status">
+      <strong>Your ebook is being downloaded.</strong><br><br>
+      If the download does not start automatically, click the button below.
+    </div>
+
+    <a href="ebook-focus.pdf"
+       download="The-Silent-Enemy-Destroying-Your-Focus.pdf"
+       class="download-button"
+       id="downloadButton">
+      DOWNLOAD THE EBOOK
+    </a>
+
+    <p class="small-text">After downloading, check your device's Downloads folder.</p>
+
+    <div class="footer">
+      © <span id="currentYear"></span> Mind in Focus • All Rights Reserved
+    </div>
+  </main>
+
+  <script>
+    "use strict";
+
+    const ebookAddress = "ebook-focus.pdf";
+    const ebookFileName = "The-Silent-Enemy-Destroying-Your-Focus.pdf";
+
+    function startEbookDownload() {
+      const temporaryLink = document.createElement("a");
+      temporaryLink.href = ebookAddress;
+      temporaryLink.download = ebookFileName;
+      temporaryLink.style.display = "none";
+      document.body.appendChild(temporaryLink);
+      temporaryLink.click();
+      temporaryLink.remove();
+    }
+
+    window.addEventListener("load", function () {
+      window.setTimeout(startEbookDownload, 1500);
+    });
+
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
