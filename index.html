@@ -800,7 +800,19 @@
             </p>
           </div>
 
-          <form id="leadForm" novalidate>
+          <form
+  action="https://formsubmit.co/mindinfocusvercel@gmail.com"
+  method="POST"
+  id="leadForm"
+  novalidate
+>
+<input type="hidden" name="_subject" value="New Ebook Lead">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_template" value="table">
+
+<input type="hidden" name="_next" value="https://mind-in-focus.vercel.app/thank-you.html">
             <div class="form-grid">
               <div class="field">
                 <label for="name">Your name</label>
@@ -1037,35 +1049,26 @@
     emailInput.addEventListener("input", validateEmail);
     consentInput.addEventListener("change", validateConsent);
 
-    leadForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+   leadForm.addEventListener("submit", function (event) {
+  const nameOk = validateName();
+  const emailOk = validateEmail();
+  const consentOk = validateConsent();
 
-      const nameOk = validateName();
-      const emailOk = validateEmail();
-      const consentOk = validateConsent();
+  if (!nameOk || !emailOk || !consentOk) {
+    event.preventDefault();
 
-      if (!nameOk || !emailOk || !consentOk) {
-        const invalidField = leadForm.querySelector('[aria-invalid="true"]');
+    const invalidField = leadForm.querySelector('[aria-invalid="true"]');
 
-        if (invalidField) {
-          invalidField.focus();
-        }
+    if (invalidField) {
+      invalidField.focus();
+    }
 
-        return;
-      }
+    return;
+  }
 
-      submitButton.disabled = true;
-      buttonText.textContent = "UNLOCKING YOUR ACCESS...";
-
-      /*
-        In this version, the form does not send data yet.
-        Later, it can be connected to FormSubmit or another tool.
-      */
-      window.setTimeout(function () {
-        window.location.href = "preview.html";
-      }, 900);
-    });
-
+  submitButton.disabled = true;
+  buttonText.textContent = "UNLOCKING YOUR ACCESS...";
+});
     /* Automatic year */
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
