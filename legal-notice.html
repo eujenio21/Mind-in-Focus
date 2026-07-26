@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Legal Notice | Mind in Focus</title>
+
+  <meta
+    name="description"
+    content="Read the Legal Notice for the Mind in Focus website, including ownership, content disclaimers, affiliate disclosure, and contact information."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050816">
+
+  <link
+    rel="canonical"
+    href="https://mind-in-focus.vercel.app/legal-notice.html"
+  >
+
+  <style>
+    :root {
+      --background: #030712;
+      --secondary-background: #071126;
+      --primary: #1688ff;
+      --primary-light: #55b9ff;
+      --white: #ffffff;
+      --text: #dce7f5;
+      --muted: #9eacc0;
+      --border: rgba(85, 185, 255, 0.2);
+      --container: 900px;
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(22, 136, 255, 0.16),
+          transparent 30%
+        ),
+        var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary-light);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      padding: 10px 16px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(3, 7, 18, 0.8);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .logo:hover {
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(22, 136, 255, 0.11);
+      color: var(--primary-light);
+    }
+
+    .back-link {
+      padding: 9px 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(22, 136, 255, 0.1);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 70px 0 42px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(22, 136, 255, 0.08);
+      color: var(--primary-light);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .legal-card {
+      margin-bottom: 70px;
+      padding: 45px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(13, 28, 59, 0.96),
+          rgba(5, 13, 29, 0.96)
+        );
+      box-shadow: 0 25px 70px rgba(0, 65, 160, 0.18);
+    }
+
+    .updated {
+      margin-bottom: 32px;
+      padding: 13px 16px;
+      border-left: 3px solid var(--primary-light);
+      border-radius: 6px;
+      background: rgba(22, 136, 255, 0.08);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .legal-section {
+      margin-top: 36px;
+    }
+
+    .legal-section:first-of-type {
+      margin-top: 0;
+    }
+
+    .legal-section h2 {
+      margin-bottom: 12px;
+      color: var(--white);
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+
+    .legal-section p {
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .legal-section ul {
+      margin: 12px 0 16px 22px;
+      color: var(--muted);
+    }
+
+    .legal-section li {
+      margin-bottom: 8px;
+      padding-left: 5px;
+    }
+
+    .legal-section strong {
+      color: var(--text);
+    }
+
+    .notice-box {
+      margin-top: 18px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(22, 136, 255, 0.07);
+    }
+
+    .notice-box p {
+      margin: 0;
+    }
+
+    .footer {
+      padding: 42px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #01040b;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 22px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #a8b5c8;
+      font-size: 0.84rem;
+    }
+
+    .copyright {
+      color: #718097;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 620px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 50px 0 32px;
+      }
+
+      .legal-card {
+        padding: 28px 20px;
+      }
+
+      .legal-section h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Mind in Focus — Legal Information
+  </div>
+
+  <header class="header">
+    <div class="container header-content">
+
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="Mind in Focus home page"
+      >
+        <span class="logo-icon" aria-hidden="true">✦</span>
+        Mind in Focus
+      </a>
+
+      <a href="index.html" class="back-link">
+        ← Back to Home
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <span class="badge">Legal information</span>
+
+        <h1>Legal Notice</h1>
+
+        <p>
+          This Legal Notice provides information about the ownership,
+          operation, content, and legal limitations of the Mind in Focus website.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <article class="legal-card">
+
+          <div class="updated">
+            <strong>Last updated:</strong> July 26, 2026
+          </div>
+
+          <section class="legal-section">
+            <h2>1. Website Identification</h2>
+
+            <p>
+              This website is operated under the name
+              <strong>Mind in Focus</strong>.
+            </p>
+
+            <div class="notice-box">
+              <p>
+                <strong>Website:</strong>
+                <a href="https://mind-in-focus.vercel.app/">
+                  https://mind-in-focus.vercel.app/
+                </a>
+                <br>
+
+                <strong>Contact email:</strong>
+                <a href="mailto:mindinfocusvercel@gmail.com">
+                  mindinfocusvercel@gmail.com
+                </a>
+              </p>
+            </div>
+          </section>
+
+          <section class="legal-section">
+            <h2>2. Purpose of the Website</h2>
+
+            <p>
+              Mind in Focus provides educational and informational content
+              related to focus, memory, productivity, mental clarity,
+              personal development, healthy routines, and general well-being.
+            </p>
+
+            <p>
+              The website may provide free digital materials, including ebooks,
+              guides, educational emails, articles, and links to third-party
+              products or services.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>3. Informational and Educational Content</h2>
+
+            <p>
+              All content available on this website is provided for general
+              informational and educational purposes only.
+            </p>
+
+            <p>
+              The information is not intended to replace professional medical,
+              psychological, legal, financial, nutritional, or other qualified
+              advice.
+            </p>
+
+            <p>
+              Visitors should consult an appropriately qualified professional
+              before making decisions based on information presented on this
+              website.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>4. Medical Disclaimer</h2>
+
+            <p>
+              Mind in Focus does not provide medical diagnosis, treatment,
+              prescriptions, or individualized medical advice.
+            </p>
+
+            <p>
+              References to memory, mental energy, focus, brain fog,
+              concentration, cognitive performance, or general well-being
+              should not be interpreted as medical claims or guarantees.
+            </p>
+
+            <div class="notice-box">
+              <p>
+                <strong>Important:</strong> If you experience persistent or
+                concerning symptoms, consult a licensed healthcare professional.
+                Do not delay seeking professional help because of information
+                found on this website.
+              </p>
+            </div>
+          </section>
+
+          <section class="legal-section">
+            <h2>5. No Guaranteed Results</h2>
+
+            <p>
+              Mind in Focus does not guarantee any specific result from using
+              the website, reading the ebook, following educational suggestions,
+              purchasing third-party products, or using external services.
+            </p>
+
+            <p>
+              Results may vary according to individual circumstances, health,
+              habits, age, lifestyle, consistency, and other factors.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>6. Affiliate Disclosure</h2>
+
+            <p>
+              Some links on this website may be affiliate links.
+            </p>
+
+            <p>
+              This means that Mind in Focus may receive a commission when a
+              visitor purchases a product or service through one of these links,
+              without increasing the price paid by the visitor.
+            </p>
+
+            <p>
+              An affiliate relationship does not constitute a guarantee,
+              endorsement, medical recommendation, or promise of results.
+            </p>
+
+            <p>
+              Visitors are responsible for reviewing the product information,
+              ingredients, price, refund policy, guarantee, risks, terms, and
+              suitability before making a purchase.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>7. Third-Party Products and Services</h2>
+
+            <p>
+              Mind in Focus may refer visitors to third-party websites,
+              products, platforms, advertisements, services, or offers.
+            </p>
+
+            <p>
+              We do not control these third parties and are not responsible for
+              their products, claims, prices, availability, payment processing,
+              guarantees, refund policies, privacy practices, security, or terms.
+            </p>
+
+            <p>
+              Any transaction with a third party is made directly between the
+              visitor and that third party.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>8. External Links</h2>
+
+            <p>
+              Links to external websites are provided for convenience or
+              informational purposes.
+            </p>
+
+            <p>
+              The inclusion of an external link does not mean that Mind in Focus
+              controls, approves, guarantees, or assumes responsibility for the
+              linked website or its content.
+            </p>
+
+            <p>
+              Visitors should review the privacy policies, terms, and legal
+              notices of external websites before providing personal or payment
+              information.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>9. Intellectual Property</h2>
+
+            <p>
+              Unless otherwise indicated, the website design, written content,
+              branding, graphics, ebook, downloadable materials, structure, and
+              visual elements are owned by or licensed to Mind in Focus.
+            </p>
+
+            <p>
+              Content may not be copied, reproduced, republished, modified,
+              distributed, sold, or used commercially without prior written
+              authorization.
+            </p>
+
+            <p>
+              Trademarks, product names, company names, and logos belonging to
+              third parties remain the property of their respective owners.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>10. Ebook Usage</h2>
+
+            <p>
+              The free ebook is provided for personal and educational use only.
+            </p>
+
+            <p>Users may not:</p>
+
+            <ul>
+              <li>Sell or resell the ebook;</li>
+              <li>Claim authorship or ownership of the ebook;</li>
+              <li>Remove copyright or ownership notices;</li>
+              <li>Modify and redistribute the ebook as another product;</li>
+              <li>Upload it to public download or file-sharing platforms;</li>
+              <li>Use it as part of a commercial product without permission.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section">
+            <h2>11. Accuracy of Information</h2>
+
+            <p>
+              We make reasonable efforts to provide useful and accurate
+              information. However, we do not guarantee that all content is
+              complete, current, error-free, or suitable for every visitor.
+            </p>
+
+            <p>
+              Information, links, product descriptions, and external offers may
+              change without notice.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>12. Website Availability</h2>
+
+            <p>
+              We do not guarantee uninterrupted or error-free access to the
+              website.
+            </p>
+
+            <p>
+              The website may become temporarily unavailable because of
+              maintenance, hosting issues, technical failures, updates,
+              security measures, or circumstances beyond our control.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>13. Limitation of Liability</h2>
+
+            <p>
+              To the extent permitted by applicable law, Mind in Focus and its
+              operators will not be responsible for direct or indirect losses,
+              damages, costs, or consequences resulting from:
+            </p>
+
+            <ul>
+              <li>Use of or reliance on website content;</li>
+              <li>Use of the free ebook or educational materials;</li>
+              <li>Access to external websites;</li>
+              <li>Purchases from third-party providers;</li>
+              <li>Website errors, interruptions, or unavailability;</li>
+              <li>Unauthorized access, malware, or technical problems;</li>
+              <li>Decisions made based on information provided on the website.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section">
+            <h2>14. Personal Responsibility</h2>
+
+            <p>
+              Visitors are responsible for how they interpret and use the
+              information available on this website.
+            </p>
+
+            <p>
+              Before purchasing a product, changing a routine, using a
+              supplement, or making a health-related decision, visitors should
+              evaluate their individual circumstances and seek appropriate
+              professional guidance when necessary.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>15. Privacy and Personal Information</h2>
+
+            <p>
+              Information submitted through website forms is handled according
+              to our
+              <a href="privacy-policy.html">Privacy Policy</a>.
+            </p>
+
+            <p>
+              Form submissions may be processed by third-party services,
+              including FormSubmit or similar providers.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>16. Applicable Legal Documents</h2>
+
+            <p>
+              Use of this website is also subject to the following documents:
+            </p>
+
+            <ul>
+              <li>
+                <a href="privacy-policy.html">Privacy Policy</a>
+              </li>
+
+              <li>
+                <a href="terms-of-use.html">Terms of Use</a>
+              </li>
+            </ul>
+
+            <p>
+              Visitors should read these documents before continuing to use the
+              website or submitting personal information.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>17. Changes to This Legal Notice</h2>
+
+            <p>
+              This Legal Notice may be updated at any time to reflect changes
+              in the website, services, business practices, or applicable
+              requirements.
+            </p>
+
+            <p>
+              The updated version will be published on this page with a revised
+              “Last updated” date.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>18. Contact</h2>
+
+            <p>
+              For questions about this Legal Notice or the website, contact:
+            </p>
+
+            <div class="notice-box">
+              <p>
+                <strong>Website:</strong> Mind in Focus
+                <br>
+
+                <strong>Email:</strong>
+                <a href="mailto:mindinfocusvercel@gmail.com">
+                  mindinfocusvercel@gmail.com
+                </a>
+                <br>
+
+                <strong>Website address:</strong>
+                <a href="https://mind-in-focus.vercel.app/">
+                  https://mind-in-focus.vercel.app/
+                </a>
+              </p>
+            </div>
+          </section>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+
+      <nav class="footer-links" aria-label="Legal links">
+        <a href="index.html">Home</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="legal-notice.html">Legal Notice</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <p class="copyright">
+        © <span id="currentYear"></span> Mind in Focus.
+        All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

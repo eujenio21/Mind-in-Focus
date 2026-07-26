@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Terms of Use | Mind in Focus</title>
+
+  <meta
+    name="description"
+    content="Read the Terms of Use governing access to and use of the Mind in Focus website and digital content."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050816">
+
+  <link
+    rel="canonical"
+    href="https://mind-in-focus.vercel.app/terms-of-use.html"
+  >
+
+  <style>
+    :root {
+      --background: #030712;
+      --secondary-background: #071126;
+      --card: #0b1730;
+      --primary: #1688ff;
+      --primary-light: #55b9ff;
+      --white: #ffffff;
+      --text: #dce7f5;
+      --muted: #9eacc0;
+      --border: rgba(85, 185, 255, 0.2);
+      --container: 900px;
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(22, 136, 255, 0.16),
+          transparent 30%
+        ),
+        var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary-light);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      padding: 10px 16px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(3, 7, 18, 0.8);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .logo:hover {
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(22, 136, 255, 0.11);
+      color: var(--primary-light);
+    }
+
+    .back-link {
+      padding: 9px 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(22, 136, 255, 0.1);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 70px 0 42px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(22, 136, 255, 0.08);
+      color: var(--primary-light);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .terms-card {
+      margin-bottom: 70px;
+      padding: 45px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(13, 28, 59, 0.96),
+          rgba(5, 13, 29, 0.96)
+        );
+      box-shadow: 0 25px 70px rgba(0, 65, 160, 0.18);
+    }
+
+    .updated {
+      margin-bottom: 32px;
+      padding: 13px 16px;
+      border-left: 3px solid var(--primary-light);
+      border-radius: 6px;
+      background: rgba(22, 136, 255, 0.08);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .terms-section {
+      margin-top: 36px;
+    }
+
+    .terms-section:first-of-type {
+      margin-top: 0;
+    }
+
+    .terms-section h2 {
+      margin-bottom: 12px;
+      color: var(--white);
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+
+    .terms-section p {
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .terms-section ul {
+      margin: 12px 0 16px 22px;
+      color: var(--muted);
+    }
+
+    .terms-section li {
+      margin-bottom: 8px;
+      padding-left: 5px;
+    }
+
+    .terms-section strong {
+      color: var(--text);
+    }
+
+    .notice-box {
+      margin-top: 18px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(22, 136, 255, 0.07);
+    }
+
+    .notice-box p {
+      margin: 0;
+    }
+
+    .footer {
+      padding: 42px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #01040b;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 22px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #a8b5c8;
+      font-size: 0.84rem;
+    }
+
+    .copyright {
+      color: #718097;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 620px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 50px 0 32px;
+      }
+
+      .terms-card {
+        padding: 28px 20px;
+      }
+
+      .terms-section h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Mind in Focus — Website Terms
+  </div>
+
+  <header class="header">
+    <div class="container header-content">
+
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="Mind in Focus home page"
+      >
+        <span class="logo-icon" aria-hidden="true">✦</span>
+        Mind in Focus
+      </a>
+
+      <a href="index.html" class="back-link">
+        ← Back to Home
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <span class="badge">Legal information</span>
+
+        <h1>Terms of Use</h1>
+
+        <p>
+          These Terms of Use govern your access to and use of the
+          Mind in Focus website, ebook, and related content.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <article class="terms-card">
+
+          <div class="updated">
+            <strong>Last updated:</strong> July 26, 2026
+          </div>
+
+          <section class="terms-section">
+            <h2>1. Acceptance of These Terms</h2>
+
+            <p>
+              By accessing, browsing, or using the Mind in Focus website,
+              you confirm that you have read, understood, and agreed to
+              these Terms of Use.
+            </p>
+
+            <p>
+              If you do not agree with these Terms, you should stop using
+              the website and its content.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>2. Purpose of the Website</h2>
+
+            <p>
+              Mind in Focus provides educational and informational content
+              related to focus, productivity, memory, mental clarity,
+              personal development, and general well-being.
+            </p>
+
+            <p>
+              The website may also provide access to a free digital ebook,
+              educational emails, third-party products, services, or
+              external resources.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>3. Educational Information Only</h2>
+
+            <p>
+              All information made available through this website,
+              including articles, emails, downloads, images, videos,
+              recommendations, and ebooks, is provided for general
+              educational and informational purposes only.
+            </p>
+
+            <p>
+              The content is not intended to replace professional medical,
+              psychological, legal, financial, or other qualified advice.
+            </p>
+
+            <p>
+              You should consult an appropriate qualified professional
+              before making decisions related to your health, treatment,
+              medication, diet, supplements, or personal circumstances.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>4. No Medical Advice</h2>
+
+            <p>
+              Mind in Focus does not provide medical diagnoses,
+              treatments, prescriptions, or individualized health advice.
+            </p>
+
+            <p>
+              The presence of symptoms such as forgetfulness, mental
+              fatigue, lack of concentration, or brain fog may have
+              different causes. Information presented on this website
+              should not be used to diagnose or treat any condition.
+            </p>
+
+            <div class="notice-box">
+              <p>
+                <strong>Important:</strong> Never disregard professional
+                medical advice or delay seeking it because of information
+                found on this website.
+              </p>
+            </div>
+          </section>
+
+          <section class="terms-section">
+            <h2>5. Eligibility</h2>
+
+            <p>
+              You must be legally capable of agreeing to these Terms under
+              the laws applicable in your location.
+            </p>
+
+            <p>
+              This website is intended for a general adult audience and
+              is not directed toward children under 13 years of age.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>6. Permitted Use</h2>
+
+            <p>
+              You may use this website and its content only for lawful,
+              personal, and non-commercial purposes.
+            </p>
+
+            <p>You agree not to:</p>
+
+            <ul>
+              <li>Use the website for unlawful or fraudulent purposes;</li>
+
+              <li>
+                Attempt to gain unauthorized access to the website,
+                servers, systems, or user information;
+              </li>
+
+              <li>
+                Introduce viruses, malicious code, automated attacks,
+                or harmful technologies;
+              </li>
+
+              <li>
+                Interfere with the normal operation, security, or
+                availability of the website;
+              </li>
+
+              <li>
+                Copy, reproduce, resell, distribute, or republish protected
+                content without authorization;
+              </li>
+
+              <li>
+                Use automated tools to extract, scrape, or collect website
+                content without prior written permission;
+              </li>
+
+              <li>
+                Misrepresent your identity or provide false information
+                through website forms.
+              </li>
+            </ul>
+          </section>
+
+          <section class="terms-section">
+            <h2>7. Ebook and Digital Content License</h2>
+
+            <p>
+              When you download the free ebook or other digital materials,
+              you receive a limited, personal, non-exclusive,
+              non-transferable, and revocable license to access and use
+              that content for personal educational purposes.
+            </p>
+
+            <p>
+              Unless you receive written authorization, you may not:
+            </p>
+
+            <ul>
+              <li>Sell or resell the ebook;</li>
+              <li>Modify the ebook and claim it as your own;</li>
+              <li>Remove copyright or ownership notices;</li>
+              <li>Upload the ebook to public download websites;</li>
+              <li>Use the content as part of a paid product;</li>
+              <li>Distribute copies for commercial purposes.</li>
+            </ul>
+          </section>
+
+          <section class="terms-section">
+            <h2>8. Intellectual Property</h2>
+
+            <p>
+              The website design, text, graphics, branding, images,
+              downloads, ebook content, logos, and other materials may be
+              protected by copyright, trademark, and other intellectual
+              property rights.
+            </p>
+
+            <p>
+              Except where otherwise stated, you may not reproduce,
+              modify, distribute, display, publish, license, sell, or
+              create derivative works from website content without prior
+              written permission.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>9. User Information and Forms</h2>
+
+            <p>
+              When submitting information through a website form, you agree
+              to provide accurate and current information.
+            </p>
+
+            <p>
+              Information submitted through the website will be handled
+              according to our
+              <a href="privacy-policy.html">Privacy Policy</a>.
+            </p>
+
+            <p>
+              Form submissions may be processed through third-party
+              services such as FormSubmit or another form-processing
+              provider.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>10. Email Communications</h2>
+
+            <p>
+              By providing your email address and giving consent, you may
+              receive the requested ebook, educational information,
+              website updates, promotional content, and related messages.
+            </p>
+
+            <p>
+              You may unsubscribe from future marketing communications at
+              any time by following the instructions included in the email
+              or contacting us directly.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>11. Third-Party Links and Services</h2>
+
+            <p>
+              The website may contain links to third-party websites,
+              products, affiliate offers, advertisements, services,
+              or external resources.
+            </p>
+
+            <p>
+              We do not control third-party websites and are not
+              responsible for their content, availability, security,
+              privacy practices, terms, claims, products, or services.
+            </p>
+
+            <p>
+              Your use of a third-party website is subject to that
+              provider’s own terms and policies.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>12. Affiliate Disclosure</h2>
+
+            <p>
+              Some links available on this website may be affiliate links.
+              This means that Mind in Focus may receive a commission if you
+              make a purchase through one of those links, at no additional
+              cost to you.
+            </p>
+
+            <p>
+              The presence of an affiliate relationship does not guarantee
+              that a product or service will be suitable for every person.
+              You are responsible for reviewing the product information,
+              terms, pricing, ingredients, risks, guarantees, and refund
+              policies before making a purchase.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>13. Product and Health Claims</h2>
+
+            <p>
+              Any statements regarding products, supplements, ingredients,
+              health benefits, mental performance, focus, memory, or
+              well-being should be understood as general information and
+              not as guaranteed outcomes.
+            </p>
+
+            <p>
+              Individual experiences and results may vary depending on
+              factors such as age, health, lifestyle, consistency, diet,
+              medications, and personal circumstances.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>14. No Guarantees of Results</h2>
+
+            <p>
+              We do not guarantee that the use of this website, ebook,
+              recommended practices, third-party products, or external
+              services will produce any specific result.
+            </p>
+
+            <p>
+              Testimonials, examples, and user experiences, when presented,
+              are not guarantees that you will achieve the same results.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>15. Website Availability</h2>
+
+            <p>
+              We may update, suspend, restrict, modify, or discontinue any
+              part of the website or its content at any time without prior
+              notice.
+            </p>
+
+            <p>
+              We do not guarantee that the website will always be available,
+              uninterrupted, secure, or free from errors.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>16. Disclaimer of Warranties</h2>
+
+            <p>
+              The website and its content are provided on an “as is” and
+              “as available” basis.
+            </p>
+
+            <p>
+              To the extent permitted by applicable law, we make no express
+              or implied warranties regarding accuracy, completeness,
+              reliability, availability, suitability, merchantability,
+              fitness for a particular purpose, or non-infringement.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>17. Limitation of Liability</h2>
+
+            <p>
+              To the extent permitted by applicable law, Mind in Focus and
+              its operators will not be liable for indirect, incidental,
+              special, consequential, or punitive damages arising from
+              your access to, use of, or inability to use the website,
+              content, downloads, emails, third-party links, products,
+              or services.
+            </p>
+
+            <p>
+              You are responsible for evaluating information and deciding
+              whether to use or rely on any content presented through this
+              website.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>18. Indemnification</h2>
+
+            <p>
+              To the extent permitted by applicable law, you agree to
+              indemnify and hold harmless Mind in Focus and its operators
+              from claims, losses, damages, liabilities, and expenses
+              arising from your misuse of the website, violation of these
+              Terms, or infringement of another person’s rights.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>19. Changes to These Terms</h2>
+
+            <p>
+              We may revise these Terms of Use periodically to reflect
+              changes in the website, services, business practices, or
+              applicable requirements.
+            </p>
+
+            <p>
+              Updated Terms will be posted on this page with a revised
+              “Last updated” date. Your continued use of the website after
+              an update means that you accept the revised Terms.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>20. Severability</h2>
+
+            <p>
+              If any provision of these Terms is determined to be invalid,
+              unlawful, or unenforceable, the remaining provisions will
+              continue in effect to the extent permitted by law.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>21. Entire Agreement</h2>
+
+            <p>
+              These Terms of Use, together with our Privacy Policy and
+              other legal notices published on the website, represent the
+              agreement between you and Mind in Focus regarding use of the
+              website.
+            </p>
+          </section>
+
+          <section class="terms-section">
+            <h2>22. Contact Us</h2>
+
+            <p>
+              For questions regarding these Terms of Use, contact us:
+            </p>
+
+            <div class="notice-box">
+              <p>
+                <strong>Website:</strong> Mind in Focus
+                <br>
+
+                <strong>Email:</strong>
+                <a href="mailto:mindinfocusvercel@gmail.com">
+                  mindinfocusvercel@gmail.com
+                </a>
+                <br>
+
+                <strong>Website address:</strong>
+                <a href="https://mind-in-focus.vercel.app/">
+                  https://mind-in-focus.vercel.app/
+                </a>
+              </p>
+            </div>
+          </section>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+
+      <nav class="footer-links" aria-label="Legal links">
+        <a href="index.html">Home</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="legal-notice.html">Legal Notice</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <p class="copyright">
+        © <span id="currentYear"></span> Mind in Focus.
+        All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
