@@ -1,13 +1,14 @@
 /*
-  API segura para cadastrar leads no Brevo
-  Caminho:
-  /api/subscribe.js
+API segura para cadastrar leads no Brevo
 
-  Variável da Vercel:
-  BREVO_API_KEY
+Arquivo:
+api/subscribe.js
 
-  Lista Brevo:
-  ID 4
+Variável da Vercel:
+BREVO_API_KEY
+
+Lista Brevo:
+ID 4
 */
 
 const BREVO_API_URL = "https://api.brevo.com/v3/contacts";
@@ -37,7 +38,7 @@ export default async function handler(req, res) {
       website = ""
     } = req.body || {};
 
-    // Honeypot contra spam
+    // Honeypot anti-spam
     if (website) {
       return res.status(200).json({
         success: true
@@ -89,28 +90,33 @@ export default async function handler(req, res) {
 
     const result = await response.json().catch(() => ({}));
 
+    console.log("Resposta do Brevo:", result);
+
     if (!response.ok) {
 
-      console.error(result);
+      console.error("Erro Brevo:", result);
 
-      return res.status(500).json({
+      return res.status(response.status).json({
         success: false,
-        message: "Brevo error."
+        message: result.message || "Brevo error.",
+        details: result
       });
 
     }
 
     return res.status(200).json({
-      success: true
+      success: true,
+      message: "Lead cadastrado com sucesso."
     });
 
   } catch (error) {
 
-    console.error(error);
+    console.error("Erro interno:", error);
 
     return res.status(500).json({
       success: false,
-      message: "Internal server error."
+      message: "Internal server error.",
+      error: error.message
     });
 
   }
