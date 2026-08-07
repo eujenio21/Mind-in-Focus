@@ -925,18 +925,17 @@
           </div>
 
           <form
-  action="https://formsubmit.co/mindinfocusvercel@gmail.com"
+  action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo5NDczODQwLCJhZGRyZXNzX2Jvb2tfaWQiOjc0ODgzNSwibGFuZyI6InB0LWJyIn0="
   method="POST"
   id="leadForm"
+  target="sendpulseFrame"
   novalidate
 >
-<input type="hidden" name="_subject" value="New Ebook Lead">
-
-<input type="hidden" name="_captcha" value="false">
-
-<input type="hidden" name="_template" value="table">
-
-<input type="hidden" name="_next" value="https://mind-in-focus.vercel.app/thank-you.html">
+  <input
+    type="hidden"
+    name="sender"
+    value="c3VwcG9ydEBtaW5kLWluLWZvY3VzLm9ubGluZQ=="
+  >
             <div class="form-grid">
               <div class="field">
                 <label for="name">Your name</label>
@@ -1102,6 +1101,15 @@
     UNLOCK FREE EBOOK
   </a>
 
+
+  <iframe
+    name="sendpulseFrame"
+    id="sendpulseFrame"
+    title="SendPulse submission"
+    style="display:none;"
+    aria-hidden="true"
+  ></iframe>
+
   <script>
     "use strict";
 
@@ -1174,25 +1182,29 @@
     consentInput.addEventListener("change", validateConsent);
 
    leadForm.addEventListener("submit", function (event) {
-  const nameOk = validateName();
-  const emailOk = validateEmail();
-  const consentOk = validateConsent();
+      const nameOk = validateName();
+      const emailOk = validateEmail();
+      const consentOk = validateConsent();
 
-  if (!nameOk || !emailOk || !consentOk) {
-    event.preventDefault();
+      if (!nameOk || !emailOk || !consentOk) {
+        event.preventDefault();
 
-    const invalidField = leadForm.querySelector('[aria-invalid="true"]');
+        const invalidField = leadForm.querySelector('[aria-invalid="true"]');
 
-    if (invalidField) {
-      invalidField.focus();
-    }
+        if (invalidField) {
+          invalidField.focus();
+        }
 
-    return;
-  }
+        return;
+      }
 
-  submitButton.disabled = true;
-  buttonText.textContent = "UNLOCKING YOUR ACCESS...";
-});
+      submitButton.disabled = true;
+      buttonText.textContent = "UNLOCKING YOUR ACCESS...";
+
+      window.setTimeout(function () {
+        window.location.href = "thank-you.html";
+      }, 1800);
+    });
     /* Automatic year */
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
