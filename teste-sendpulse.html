@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Teste SendPulse</title>
+</head>
+
+<body>
+
+  <h1>Teste SendPulse</h1>
+
+  <form
+    action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo5NDczODQwLCJhZGRyZXNzX2Jvb2tfaWQiOjc0ODgzNSwibGFuZyI6InB0LWJyIn0="
+    method="post"
+  >
+
+    <label>Nome</label>
+    <input
+      type="text"
+      name="name"
+    >
+
+    <br><br>
+
+    <label>E-mail</label>
+    <input
+      type="email"
+      required
+      name="email"
+    >
+
+    <input
+      type="hidden"
+      name="sender"
+      value="c3VwcG9ydEBtaW5kLWluLWZvY3VzLm9ubGluZQ=="
+    >
+
+    <br><br>
+
+    <button type="submit">
+      TESTAR SENDPULSE
+    </button>
+
+  </form>
+
+</body>
+</html>
