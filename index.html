@@ -742,8 +742,10 @@
       background: var(--primary);
       box-shadow: 0 12px 35px rgba(0, 88, 220, 0.5);
       color: var(--white);
+      border: 0;
       font-size: 0.86rem;
       font-weight: 900;
+      cursor: pointer;
     }
 
     /* =====================================================
@@ -1006,6 +1008,7 @@
             <p class="safe-text">
               🔒 Your information is safe. We do not send spam.
             </p>
+            <p class="safe-text" id="formStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -1079,7 +1082,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <nav class="footer-links" aria-label="Links legais">
+      <nav class="footer-links" aria-label="Legal links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-of-use.html">Terms of Use</a>
         <a href="legal-notice.html">Legal Notice</a>
@@ -1099,19 +1102,9 @@
     </div>
   </footer>
 
-  <a href="#formulario" class="mobile-cta">
+  <button type="submit" form="leadForm" class="mobile-cta" id="mobileSubmitButton">
     UNLOCK FREE EBOOK
-  </a>
-
-
-  <iframe
-    name="sendpulseFrame"
-    id="sendpulseFrame"
-    title="SendPulse submission"
-    style="display:none;"
-    aria-hidden="true"
-  ></iframe>
-
+  </button>
   <script>
     "use strict";
 
@@ -1136,6 +1129,8 @@
     const consentInput = document.getElementById("consent");
     const submitButton = document.getElementById("submitButton");
     const buttonText = document.getElementById("buttonText");
+    const mobileSubmitButton = document.getElementById("mobileSubmitButton");
+    const formStatus = document.getElementById("formStatus");
 
     function validEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
@@ -1192,22 +1187,21 @@
 
       if (!nameOk || !emailOk || !consentOk) {
         const invalidField = leadForm.querySelector('[aria-invalid="true"]');
-
-        if (invalidField) {
-          invalidField.focus();
-        }
-
+        if (invalidField) invalidField.focus();
         return;
       }
 
       submitButton.disabled = true;
+      if (mobileSubmitButton) mobileSubmitButton.disabled = true;
       buttonText.textContent = "UNLOCKING YOUR ACCESS...";
+      formStatus.textContent = "";
 
       try {
         const response = await fetch("/api/subscribe", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Accept": "application/json"
           },
           body: JSON.stringify({
             name: nameInput.value.trim(),
@@ -1224,17 +1218,14 @@
           throw new Error(result.message || "Subscription failed.");
         }
 
-        window.location.href = "thank-you.html";
+        window.location.assign("thank-you.html");
 
       } catch (error) {
-        console.error("SendPulse subscription error:", error);
-
+        console.error("Brevo subscription error:", error);
         submitButton.disabled = false;
+        if (mobileSubmitButton) mobileSubmitButton.disabled = false;
         buttonText.textContent = "UNLOCK MY FREE EBOOK";
-
-        alert(
-          "We couldn't submit your request right now. Please try again in a moment."
-        );
+        formStatus.textContent = "We couldn't submit your request. Please try again.";
       }
     });
 
