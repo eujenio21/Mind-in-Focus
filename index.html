@@ -1181,7 +1181,9 @@
     emailInput.addEventListener("input", validateEmail);
     consentInput.addEventListener("change", validateConsent);
 
-   leadForm.addEventListener("submit", function (event) {
+   let formSubmittedToSendPulse = false;
+
+    leadForm.addEventListener("submit", function (event) {
       const nameOk = validateName();
       const emailOk = validateEmail();
       const consentOk = validateConsent();
@@ -1198,12 +1200,28 @@
         return;
       }
 
+      /*
+        O envio segue normalmente para o SendPulse dentro do iframe oculto.
+        Não redirecionamos por tempo fixo, para evitar cancelar a requisição.
+      */
+      formSubmittedToSendPulse = true;
       submitButton.disabled = true;
       buttonText.textContent = "UNLOCKING YOUR ACCESS...";
+    });
 
-      window.setTimeout(function () {
-        window.location.href = "thank-you.html";
-      }, 1800);
+    /*
+      Só redireciona depois que o SendPulse responder ao POST.
+      O primeiro carregamento vazio do iframe é ignorado porque
+      formSubmittedToSendPulse ainda será false.
+    */
+    const sendpulseFrame = document.getElementById("sendpulseFrame");
+
+    sendpulseFrame.addEventListener("load", function () {
+      if (!formSubmittedToSendPulse) {
+        return;
+      }
+
+      window.location.href = "thank-you.html";
     });
     /* Automatic year */
     document.getElementById("currentYear").textContent =
