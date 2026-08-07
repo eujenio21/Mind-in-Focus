@@ -925,16 +925,18 @@
           </div>
 
           <form
-  action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo5NDczODQwLCJhZGRyZXNzX2Jvb2tfaWQiOjc0ODgzNSwibGFuZyI6InB0LWJyIn0="
-  method="POST"
   id="leadForm"
-  target="sendpulseFrame"
   novalidate
 >
+  <!-- Honeypot anti-spam: deve permanecer vazio -->
   <input
-    type="hidden"
-    name="sender"
-    value="c3VwcG9ydEBtaW5kLWluLWZvY3VzLm9ubGluZQ=="
+    type="text"
+    id="website"
+    name="website"
+    tabindex="-1"
+    autocomplete="off"
+    aria-hidden="true"
+    style="position:absolute;left:-9999px;opacity:0;pointer-events:none;"
   >
             <div class="form-grid">
               <div class="field">
@@ -1181,16 +1183,14 @@
     emailInput.addEventListener("input", validateEmail);
     consentInput.addEventListener("change", validateConsent);
 
-   let formSubmittedToSendPulse = false;
+   leadForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    leadForm.addEventListener("submit", function (event) {
       const nameOk = validateName();
       const emailOk = validateEmail();
       const consentOk = validateConsent();
 
       if (!nameOk || !emailOk || !consentOk) {
-        event.preventDefault();
-
         const invalidField = leadForm.querySelector('[aria-invalid="true"]');
 
         if (invalidField) {
@@ -1200,29 +1200,44 @@
         return;
       }
 
-      /*
-        O envio segue normalmente para o SendPulse dentro do iframe oculto.
-        Não redirecionamos por tempo fixo, para evitar cancelar a requisição.
-      */
-      formSubmittedToSendPulse = true;
       submitButton.disabled = true;
       buttonText.textContent = "UNLOCKING YOUR ACCESS...";
-    });
 
-    /*
-      Só redireciona depois que o SendPulse responder ao POST.
-      O primeiro carregamento vazio do iframe é ignorado porque
-      formSubmittedToSendPulse ainda será false.
-    */
-    const sendpulseFrame = document.getElementById("sendpulseFrame");
+      try {
+        const response = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            website: document.getElementById("website").value
+          })
+        });
 
-    sendpulseFrame.addEventListener("load", function () {
-      if (!formSubmittedToSendPulse) {
-        return;
+        const result = await response.json().catch(function () {
+          return {};
+        });
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Subscription failed.");
+        }
+
+        window.location.href = "thank-you.html";
+
+      } catch (error) {
+        console.error("SendPulse subscription error:", error);
+
+        submitButton.disabled = false;
+        buttonText.textContent = "UNLOCK MY FREE EBOOK";
+
+        alert(
+          "We couldn't submit your request right now. Please try again in a moment."
+        );
       }
-
-      window.location.href = "thank-you.html";
     });
+
     /* Automatic year */
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
